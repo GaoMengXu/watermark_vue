@@ -9,10 +9,18 @@
     "preview": "vite preview --host 127.0.0.1"
   },
   "dependencies": {
+    "docx": "^9.15.3",
+    "docx-preview": "^0.4.1",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^4.2.1",
+    "jszip": "^3.10.2",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^4.10.38",
+    "tesseract.js": "^7.0.0",
     "vue": "^3.5.13",
-    "vue-router": "^4.6.4"
+    "vue-router": "^4.6.4",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",

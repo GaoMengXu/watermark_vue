@@ -1,4 +1,5 @@
 import WatermarkView from '../views/WatermarkView.vue'
+import DocConvertView from '../views/DocConvertView.vue'
 
 /**
  * 工具清单 —— 全站唯一的扩展点。
@@ -28,5 +29,15 @@ export const tools = [
     description: '给图片或 PDF 叠加斜向平铺水印，可调文案、颜色、透明度与字号。',
     icon: '◈',
     badge: 'PDF / 图片',
+  },
+  {
+    path: '/doc-convert',
+    name: 'doc-convert',
+    component: DocConvertView,
+    title: '文档互转工具',
+    shortTitle: '文档互转',
+    description: 'Word 与 PDF 互转，支持表格、图片、页眉页脚，本地处理不上传。',
+    icon: '⇄',
+    badge: 'Word / PDF',
   },
 ]

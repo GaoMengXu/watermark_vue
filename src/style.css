@@ -355,3 +355,97 @@ a.tool-card:hover {
   .nav-link { padding: 6px 8px; font-size: 12px; }
   .home { padding: 32px 16px 48px; }
 }
+
+/* ── 文档互转页 ── */
+.docx-viewport {
+  position: relative; width: 100%; height: 100%; min-height: 420px;
+  overflow: auto; display: flex; flex-direction: column; align-items: center; gap: 16px;
+  background: var(--stage); border-radius: 8px; padding: 20px;
+}
+.docx-page {
+  background: #fff; box-shadow: 0 6px 24px rgba(26,34,51,.14);
+  border-radius: 3px; flex: 0 0 auto;
+}
+.docx-page :deep(*) { max-width: 100%; }
+.docx-page :deep(table) { border-collapse: collapse; }
+.docx-page :deep(td), .docx-page :deep(th) { border: 1px solid #d1d5db; padding: 4px 8px; }
+.docx-page :deep(img) { max-width: 100%; }
+
+/* Excel 工作表页 */
+.sheet-page {
+  background: #fff; box-shadow: 0 6px 24px rgba(26,34,51,.14);
+  border-radius: 6px; flex: 0 0 auto; padding: 16px; max-width: 100%;
+  overflow: visible;
+}
+.sheet-title {
+  font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 10px;
+}
+.sheet-page table {
+  border-collapse: collapse; font-size: 12px;
+}
+.sheet-page td, .sheet-page th {
+  border: 1px solid #d1d5db; padding: 4px 8px; min-width: 40px;
+  word-break: break-all;
+}
+
+/* PPT 幻灯片页 */
+.slide-page {
+  background: #fff; box-shadow: 0 6px 24px rgba(26,34,51,.14);
+  border-radius: 6px; flex: 0 0 auto; width: 720px; max-width: 100%;
+  aspect-ratio: 16 / 9; padding: 32px 40px; overflow: auto;
+}
+.slide-num { font-size: 11px; color: var(--muted); margin-bottom: 12px; }
+.slide-text { margin: 0 0 8px; font-size: 14px; line-height: 1.6; color: var(--ink); }
+.slide-empty { margin: 0; color: var(--muted); font-size: 13px; }
+
+.pdf-text-viewport {
+  position: relative; width: 100%; height: 100%; min-height: 420px;
+  overflow: auto; background: #fff; border-radius: 8px; padding: 24px;
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+.pdf-text {
+  margin: 0; white-space: pre-wrap; word-break: break-word;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 13px; line-height: 1.8; color: var(--ink);
+}
+.pdf-text-empty { margin: 0; color: var(--muted); font-size: 13px; text-align: center; padding-top: 40px; }
+
+/* 转换结果展示 */
+.conv-result {
+  display: flex; align-items: center; gap: 10px;
+  background: #f7f8fa; border: 1px solid var(--line); border-radius: 8px;
+  padding: 10px 12px;
+}
+.conv-type {
+  font-size: 13px; color: var(--ink-2); background: #fff;
+  border: 1px solid var(--line); border-radius: 6px; padding: 5px 10px;
+}
+.conv-arrow { color: var(--muted); font-size: 16px; }
+.conv-out { color: var(--primary); border-color: #c9d8ff; background: var(--primary-soft); font-weight: 600; }
+
+/* 支持格式列表 */
+.format-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.fmt {
+  font-size: 12px; color: var(--ink-2); background: #f3f5f9;
+  border-radius: 6px; padding: 5px 10px;
+}
+
+/* OCR 进度覆盖层 */
+.ocr-overlay {
+  position: absolute; inset: 0; z-index: 5;
+  background: rgba(237, 240, 244, .92);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 14px; backdrop-filter: blur(2px); padding: 24px; text-align: center;
+}
+.ocr-info { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.ocr-title { margin: 0; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+.ocr-sub { margin: 0; font-size: 12px; color: var(--muted); }
+.ocr-bar {
+  width: 260px; max-width: 80%; height: 8px; border-radius: 4px;
+  background: #dde3ec; overflow: hidden;
+}
+.ocr-bar span {
+  display: block; height: 100%; background: var(--primary);
+  border-radius: 4px; transition: width .2s ease;
+}
+.ocr-pct { margin: 0; font-size: 12px; color: var(--ink-2); font-variant-numeric: tabular-nums; }
